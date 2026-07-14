@@ -2,22 +2,30 @@ import pygame
 
 draw_group = pygame.sprite.Group()
 
-bird = pygame.sprite.Sprite(draw_group)
-bird.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/.venv/lib64/python3.12/site-packages/game/PyGame-FB Sprites/Pixel art - Pássaro.png")
-
-bird.image = pygame.transform.scale(bird.image, [100, 100])
-bird.rect = pygame.Rect(50, 50, 100, 100)
+gravity_power = 5
+jump_power = 10
+can_jump = True
 
 
-def Create_Bird(display):
-    draw_group.draw(display)
+class bird:
+    bird = pygame.sprite.Sprite(draw_group)
+    bird.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - Pássaro.png")
+
+    bird.image = pygame.transform.scale(bird.image, [100, 100])
+    bird.rect = pygame.Rect(50, 50, 100, 100)
 
 
-#def Apply_Gravity():
+    def Create_Bird(display):
+        draw_group.draw(display)
+
+
+    def Apply_Gravity():
+        bird.bird.rect.y += gravity_power
 
 
 
-def Jumping():
-    for event in pygame.event.get():
-        if event == pygame.K_SPACE:
-            print("Pule")
+    def Jumping():
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_SPACE]:
+            bird.bird.rect.y -= jump_power                

@@ -14,8 +14,10 @@ while running:
     screen.fill("white")
 
     #Métodos do pássaro
-    bird.Create_Bird(screen)
-    bird.Jumping()
+    bird.bird.Create_Bird(screen)
+    bird.bird.Jumping()
+    bird.bird.Apply_Gravity()
+    
 
     pygame.display.flip()
 
