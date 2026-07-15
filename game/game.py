@@ -1,5 +1,6 @@
 import pygame
 import bird
+import pipe
 
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
@@ -17,6 +18,10 @@ while running:
     bird.Pbird.Create_Bird(screen)
     bird.Pbird.Jumping()
     bird.Pbird.Apply_Gravity()
+
+    #Métodos dos canos
+    pipe.Pipes.Create_Pipes(screen)
+    pipe.Pipes.Move_Pipes()
     
 
     pygame.display.flip()

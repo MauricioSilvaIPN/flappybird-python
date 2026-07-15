@@ -3,7 +3,7 @@ import pygame
 draw_group = pygame.sprite.Group()
 
 gravity_power = 5
-jump_power = 25
+jump_power = 85
 
 class Pbird:
     can_jump = True
