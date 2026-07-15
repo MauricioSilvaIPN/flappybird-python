@@ -21,11 +21,23 @@ class Pipes:
     def Create_Pipes(display):
         draw_group.draw(display)
 
+        if Pipes.normal_pipe.rect.x <= 0 and Pipes.upside_pipe.rect.x <= 0:
+            #Pipes.normal_pipe.kill()
+            #Pipes.upside_pipe.kill()
+            Pipes.Spawn_Pipes()
+
 
     def Move_Pipes():
         Pipes.normal_pipe.rect.x -= speed_move
         Pipes.upside_pipe.rect.x -= speed_move
-    
-    
+
+
     def Spawn_Pipes():
-        pass
+        Pipes.normal_pipe.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - PipeNormal.png")
+        Pipes.upside_pipe.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - PipeUpSidel.png")
+
+        Pipes.normal_pipe.image = pygame.transform.scale(Pipes.normal_pipe.image, [100, 500])
+        Pipes.upside_pipe.image = pygame.transform.scale(Pipes.upside_pipe.image, [100, 500])
+
+        Pipes.normal_pipe.rect = pygame.Rect(1280, 550, 100, 100)
+        Pipes.upside_pipe.rect = pygame.Rect(1280, 0, 100, 100)

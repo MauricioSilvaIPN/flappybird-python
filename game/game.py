@@ -22,7 +22,6 @@ while running:
     #Métodos dos canos
     pipe.Pipes.Create_Pipes(screen)
     pipe.Pipes.Move_Pipes()
-    
 
     pygame.display.flip()
 
