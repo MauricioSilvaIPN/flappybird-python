@@ -1,5 +1,4 @@
 import pygame
-import pipe
 
 draw_group = pygame.sprite.Group()
 
