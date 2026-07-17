@@ -1,4 +1,5 @@
 import pygame
+import pipe
 
 draw_group = pygame.sprite.Group()
 
@@ -16,6 +17,9 @@ class Pbird:
 
     bird.image = pygame.transform.scale(bird.image, [100, 100])
     bird.rect = pygame.Rect(50, 50, 100, 100)
+
+    collider = bird.rect
+
 
 
     def Create_Bird(display):
@@ -45,3 +49,11 @@ class Pbird:
             Pbird.can_jump = True
             Pbird.can_gravity = True
             Pbird.jump_timer = 1.0
+    
+
+    def Death():
+        pass
+        #if Pbird.collider.colliderect(pipe.Pipes.normal_collider):
+        #print("Uepa")
+
+            

@@ -18,6 +18,7 @@ while running:
     bird.Pbird.Create_Bird(screen)
     bird.Pbird.Jumping()
     bird.Pbird.Apply_Gravity()
+    bird.Pbird.Death()
 
     #Métodos dos canos
     pipe.Pipes.Create_Pipes(screen)
