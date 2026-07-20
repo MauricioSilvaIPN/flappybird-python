@@ -9,15 +9,16 @@ screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
 running = True
 
-score_number = 0
 score_font = pygame.font.SysFont("Comic Sans MS", 80)
+score_number = 0
 
 
 def UpdateScore():
+    global score_number
     new_score = str(score_number)
+
     text_surface = score_font.render(new_score, False, (0, 0, 0))
-    screen.blit(text_surface, (0, 0))
-    print(score_number)
+    screen.blit(text_surface, (1200, 0))
 
     if pipe.Pipes.normal_pipe.rect.x < bird.Pbird.bird.rect.x:
         score_number += 1
