@@ -1,11 +1,16 @@
 import pygame
+import pipe
 
 draw_group = pygame.sprite.Group()
 
 gravity_power = 5
 jump_power = 85
 
+
 class Pbird:
+    vermelho = (255, 0, 0)
+
+    is_dead = False
     can_jump = True
     can_gravity = True
     jump_timer = 1.0
@@ -18,6 +23,8 @@ class Pbird:
     bird.rect = pygame.Rect(50, 50, 100, 100)
 
     collider = bird.rect
+
+    bird.image.fill(vermelho)
 
 
 
@@ -50,9 +57,19 @@ class Pbird:
             Pbird.jump_timer = 1.0
     
 
-    def Death():
-        pass
-        #if Pbird.collider.colliderect(pipe.Pipes.normal_collider):
-        #print("Uepa")
+    def BirdDeath():
+        if Pbird.collider.colliderect(pipe.Pipes.normal_pipe) or Pbird.collider.colliderect(pipe.Pipes.upside_pipe):
+            Pbird.is_dead = True
+
+
+    def BirdBirth(display):
+        Pbird.bird.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - Pássaro.png")
+
+        Pbird.bird.image = pygame.transform.scale(Pbird.bird.image, [100, 100])
+        Pbird.bird.rect = pygame.Rect(50, 50, 100, 100)
+
+        draw_group.draw(display)
+        Pbird.is_dead = False
+
 
             

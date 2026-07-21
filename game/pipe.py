@@ -21,8 +21,8 @@ class Pipes:
     normal_pipe.rect = pygame.Rect(1280, 550, 100, 450)
     upside_pipe.rect = pygame.Rect(1280, 0, 100, 450)
 
-    #normal_pipe.image.fill(vermelho)
-    #upside_pipe.image.fill(vermelho)
+    normal_pipe.image.fill(vermelho)
+    upside_pipe.image.fill(vermelho)
 
 
     def Create_Pipes(display):
@@ -52,3 +52,16 @@ class Pipes:
 
         Pipes.normal_pipe.rect = pygame.Rect(1280, random_normal, 100, 450)
         Pipes.upside_pipe.rect = pygame.Rect(1280, random_upside, 100, 450)
+
+
+    def RestartPipes(display):
+        Pipes.normal_pipe.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - PipeNormal.png")
+        Pipes.upside_pipe.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - PipeUpSidel.png")
+
+        Pipes.normal_pipe.image = pygame.transform.scale(Pipes.normal_pipe.image, [128, 350]) #altura 128
+        Pipes.upside_pipe.image = pygame.transform.scale(Pipes.upside_pipe.image, [128, 350])
+
+        Pipes.normal_pipe.rect = pygame.Rect(1280, 550, 100, 450)
+        Pipes.upside_pipe.rect = pygame.Rect(1280, 0, 100, 450)
+
+        draw_group.draw(display)
