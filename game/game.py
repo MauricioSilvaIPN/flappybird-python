@@ -44,6 +44,7 @@ while running:
 
     if bird.Pbird.is_dead == True:
        RestartGame()
+       bird.Pbird.is_dead = False
 
 
     #Métodos do pássaro

@@ -19,12 +19,12 @@ class Pbird:
     bird = pygame.sprite.Sprite(draw_group)
     bird.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - Pássaro.png")
 
-    bird.image = pygame.transform.scale(bird.image, [100, 100])
-    bird.rect = pygame.Rect(50, 50, 100, 100)
+    bird.image = pygame.transform.scale(bird.image, [50, 50])
+    bird.rect = pygame.Rect(50, 50, 50, 50)
 
     collider = bird.rect
 
-    bird.image.fill(vermelho)
+#    bird.image.fill(vermelho)
 
 
 
@@ -63,13 +63,9 @@ class Pbird:
 
 
     def BirdBirth(display):
-        Pbird.bird.image = pygame.image.load("/home/mauricio/Documentos/Programmer Docs/VSCode Docs/Projetos/FlappyBird-game/game/PyGame-FB Sprites/Pixel art - Pássaro.png")
-
-        Pbird.bird.image = pygame.transform.scale(Pbird.bird.image, [100, 100])
-        Pbird.bird.rect = pygame.Rect(50, 50, 100, 100)
+        Pbird.bird.rect = pygame.Rect(50, 50, 50, 50)
 
         draw_group.draw(display)
-        Pbird.is_dead = False
 
 
             
