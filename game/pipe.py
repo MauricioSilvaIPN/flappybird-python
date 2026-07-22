@@ -7,7 +7,7 @@ speed_move = 5
 
 
 class Pipes:
-    vermelho = (255, 0, 0)
+    #vermelho = (255, 0, 0)
 
     normal_pipe = pygame.sprite.Sprite(draw_group)
     upside_pipe = pygame.sprite.Sprite(draw_group)
@@ -48,8 +48,6 @@ class Pipes:
         Pipes.upside_pipe.rect = pygame.Rect(1280, random_upside, 128, 350)
 
 
-    def RestartPipes(display):
+    def RestartPipes():
         Pipes.normal_pipe.rect = pygame.Rect(1280, 550, 128, 350)
         Pipes.upside_pipe.rect = pygame.Rect(1280, 0, 128, 350)
-
-        draw_group.draw(display)

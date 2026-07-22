@@ -8,7 +8,7 @@ jump_power = 85
 
 
 class Pbird:
-    vermelho = (255, 0, 0)
+    #vermelho = (255, 0, 0)
 
     is_dead = False
     can_jump = True
@@ -24,7 +24,7 @@ class Pbird:
 
     collider = bird.rect
 
-#    bird.image.fill(vermelho)
+    #bird.image.fill(vermelho)
 
 
 
@@ -61,11 +61,12 @@ class Pbird:
         if Pbird.collider.colliderect(pipe.Pipes.normal_pipe) or Pbird.collider.colliderect(pipe.Pipes.upside_pipe):
             Pbird.is_dead = True
 
+        if Pbird.bird.rect.y >= 720:
+            Pbird.is_dead = True
 
-    def BirdBirth(display):
+
+    def BirdBirth():
         Pbird.bird.rect = pygame.Rect(50, 50, 50, 50)
-
-        draw_group.draw(display)
 
 
             

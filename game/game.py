@@ -21,15 +21,15 @@ def UpdateScore():
     screen.blit(text_surface, (1200, 0))
 
     if pipe.Pipes.normal_pipe.rect.x < bird.Pbird.bird.rect.x:
-       score_number += 1
+        score_number += 1
 
 
 def RestartGame():
     global score_number
     score_number = 0
 
-    pipe.Pipes.RestartPipes(screen)
-    bird.Pbird.BirdBirth(screen)
+    pipe.Pipes.RestartPipes()
+    bird.Pbird.BirdBirth()
 
 
 while running:
